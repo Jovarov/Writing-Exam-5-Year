@@ -12,8 +12,8 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            font-family: Verdana, Geneva, sans-serif;
+            background: #000000;
             min-height: 100vh;
             padding: 20px;
         }
@@ -264,9 +264,9 @@
             <strong>⚠️ Important Instructions:</strong>
             <ul>
                 <li>The exam will open in fullscreen mode</li>
-                <li>You should write at least 400 words</li>
+                <li>You should write at least 200 words</li>
                 <li>Do not switch tabs or exit fullscreen during the exam</li>
-                <li>After 3 warnings, your work will be marked as fraud and submitted</li>
+                <li>After a warning, your work will be marked as fraud and submitted</li>
                 <li>Spell check is disabled - write in your own words</li>
             </ul>
         </div>
@@ -338,10 +338,10 @@
                 console.log('Fullscreen exit. Warnings:', warnings);
                 if (warnings >= 3) {
                     isFraud = true;
-                    alert('⚠️ FINAL WARNING: You have violated the exam rules 3 times. This exam is now marked as FRAUD and will be submitted automatically.');
+                    alert('⚠️ FINAL WARNING: You have violated the exam rules This exam is now marked as FRAUD and will be submitted automatically.');
                     setTimeout(() => submitExam(), 1000);
                 } else {
-                    alert(`⚠️ Warning ${warnings}/3: You exited fullscreen mode. One more violation and your exam will be marked as fraud!`);
+                    alert(`⚠️ Warning: You exited fullscreen mode. One more violation and your exam will be marked as fraud!`);
                     enterFullscreen();
                 }
             }
@@ -355,10 +355,10 @@
                 console.log('Tab switch. Warnings:', warnings);
                 if (warnings >= 3) {
                     isFraud = true;
-                    alert('⚠️ FINAL WARNING: You have violated the exam rules 3 times. This exam is now marked as FRAUD and will be submitted automatically.');
+                    alert('⚠️ FINAL WARNING: You have violated the exam rules. This exam is now marked as FRAUD and will be submitted automatically.');
                     setTimeout(() => submitExam(), 1000);
                 } else {
-                    alert(`⚠️ Warning ${warnings}/3: Switching tabs/windows is not allowed! One more violation and your exam will be marked as fraud!`);
+                    alert(`⚠️ Warning: Switching tabs/windows is not allowed! One more violation and your exam will be marked as fraud!`);
                 }
             }
         });
